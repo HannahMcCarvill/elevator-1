@@ -10,7 +10,7 @@ public class elevator
     private int bottom_floor = 0;
     private int capacity = 5;
     private boolean goingUp = true;
-
+    
     /**
      * make a new elevator
      */
@@ -73,7 +73,7 @@ public class elevator
     public void exit(int leavingPassengers)
     {
         /* */
-        if (occupants > 0) {
+        if (occupants >= 0) {
             occupants = occupants - leavingPassengers;
         }
         else {
