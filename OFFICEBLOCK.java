@@ -19,7 +19,7 @@ public class OFFICEBLOCK
         // loop 10 times
         for (int i = 0 ; i <= 10; i++) {
             // exit random queue
-             liftA.exit(randomPeople.nextInt(10));
+             liftA.exit(randomPeople.nextInt(liftA.getOccupants()+1));
             // board random queue
             liftA.board(randomPeople.nextInt(10));
             // move lift

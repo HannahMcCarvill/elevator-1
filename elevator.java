@@ -1,4 +1,4 @@
-
+ 
 /**
  * provide a simple elevator
  */
@@ -58,12 +58,12 @@ public class elevator
     public void board(int newPassengers)
     {
         /* */
-        if (occupants < capacity) {
-            occupants = occupants + newPassengers;
+        if (occupants + newPassengers > capacity) {
+            occupants = capacity;
         }
         else {
             /* else display error message*/
-            System.out.println("Sorry lift is full!");
+            occupants = occupants + newPassengers;
         }
     }
 
