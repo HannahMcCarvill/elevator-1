@@ -6,9 +6,9 @@ public class elevator
 {
     private int current_floor = 0;
     private int occupants = 0;
-    private int top_floor = 7;
+    private int top_floor = 6;
     private int bottom_floor = 0;
-    private int capacity = 5;
+    private int capacity = 9;
     private boolean goingUp = true;
     
     /**
@@ -16,6 +16,12 @@ public class elevator
      */
     public elevator()
     {
+    }
+
+    public elevator(int floor, boolean up)
+    {
+        current_floor = floor;
+        goingUp = up;
     }
 
     /**
@@ -29,7 +35,7 @@ public class elevator
         }
         else {
             /* else display error message*/
-            System.out.println("Sorry you are at the top!");
+            // System.out.println("Sorry you are at the top!");
             goingUp = false;
             descend();
         }
@@ -46,7 +52,7 @@ public class elevator
         }
         else {
             /* else display error message*/
-            System.out.println("Sorry you are at the bottom!");
+            // System.out.println("Sorry you are at the bottom!");
             goingUp = true;
             ascend();
         }
@@ -55,15 +61,30 @@ public class elevator
     /**
      * lift is boarded by one more person up to the max
      */
-    public void board(int newPassengers)
+    public void board(int[] newPassengers)
     {
         /* */
+<<<<<<< HEAD
         if (occupants + newPassengers > capacity) {
             occupants = capacity;
+=======
+        //System.out.print(" +" + newPassengers + " ");
+        if (newPassengers[current_floor] <= capacity - occupants) {
+            occupants = occupants + newPassengers[current_floor];
+            System.out.println("+" + newPassengers[current_floor]);
+            newPassengers[current_floor] = 0;
+>>>>>>> compstki/master
         }
         else {
+            System.out.println("+" + (capacity - occupants));
+            newPassengers[current_floor] = newPassengers[current_floor] + occupants - capacity;
+            occupants = capacity;
             /* else display error message*/
+<<<<<<< HEAD
             occupants = occupants + newPassengers;
+=======
+            // System.out.println("Sorry lift is full!");
+>>>>>>> compstki/master
         }
     }
 
@@ -73,12 +94,17 @@ public class elevator
     public void exit(int leavingPassengers)
     {
         /* */
+<<<<<<< HEAD
         if (occupants >= 0) {
+=======
+        System.out.print("-" + leavingPassengers);
+        if (occupants > 0) {
+>>>>>>> compstki/master
             occupants = occupants - leavingPassengers;
         }
         else {
             /* else display error message*/
-            System.out.println("Sorry lift is empty!");
+            // System.out.println("Sorry lift is empty!");
         }
     }
 
@@ -87,7 +113,12 @@ public class elevator
      */
     public void displayLift()
     {
-        System.out.println("Floor : " + current_floor + " People : " + occupants);
+        System.out.print("\t");
+        //System.out.println("Floor : " + current_floor + " People : " + occupants);
+        for (int i = 0; i<current_floor; i++) {
+            System.out.print("\t");
+        }
+        System.out.print("["+ occupants + "]");
     }
 
     /**
@@ -105,7 +136,7 @@ public class elevator
     {
         return occupants;
     }
-    
+
     public void moveLift() {
         if (goingUp == true) {
             ascend();

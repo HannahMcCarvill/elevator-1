@@ -2,5 +2,14 @@
 comment0.params=
 comment0.target=OFFICEBLOCK()
 comment1.params=
+<<<<<<< HEAD
 comment1.target=void\ testLoop()
 numComments=2
+=======
+comment1.target=OFFICEBLOCK()
+comment2.params=
+comment2.target=void\ testLoop()
+comment3.params=
+comment3.target=void\ floorQ()
+numComments=4
+>>>>>>> compstki/master
