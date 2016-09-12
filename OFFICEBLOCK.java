@@ -23,15 +23,11 @@ public class OFFICEBLOCK
         // loop 10 times
         for (int i = 0 ; i <= 15; i++) {
             floorQ(();
-            for (int
-            // exit random queue
-             liftA.exit(randomPeople.nextInt(liftA.getOccupants()+1));
-            // board random queue
-            liftA.board(randomPeople.nextInt(10));
-            // move lift
-            liftA.moveLift();
-            // end
-            liftA.displayLift();
+            for (int j = 0; j<lifts.length; j++){
+            lifts[j].dispaly
+            lifts[j].
+            lifts[j].
+            lifts[j].
         }
     }
 }
